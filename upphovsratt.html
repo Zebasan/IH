@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Upphovsrätt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/ett.css">
+</head>
+<body>
+  <header><h1>Upphovsrätt</h1></header>
+  <nav>
+    <ul class="nav-list">
+    <li><a href="index.html">Start</a></li>
+    <li class="dropdown">
+      <a href="#">Instruktioner &#9662;</a>
+      <ul class="dropdown-content">
+        <li><a href="ett.html">HTML och struktur</a></li>
+        <li><a href="two.html">Bilder och Länkar</a></li>
+        <li><a href="three.html">Listor</a></li>
+        <li><a href="four.html">Inputfält</a></li>
+        <li><a href="five.html">Div</a></li>
+        <li><a href="sex.html">Kommentar</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+  </ul>
+    <button id="hamburger" aria-label="Visa meny">
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    </button>
+  </nav>
+  <main>
+    <section class="info-block">
+      <h2>Upphovsrätt & Delning</h2>
+      <p>
+        Den här webbplatsen är skapad för att inspirera och hjälpa andra att lära sig HTML och webbutveckling.<br>
+        <strong>Du får gärna kopiera, använda och modifiera både kod och bilder från denna sida</strong> – så länge du gör det i utbildningssyfte eller för eget lärande.<br>
+        Det är fritt att använda materialet i skolprojekt, undervisning eller egna webbprojekt.<br>
+        <br>
+        <strong>Det uppskattas om du nämner källan eller länkar tillbaka hit om du använder materialet offentligt.</strong>
+      </p>
+      <h3>Bilder</h3>
+      <p>
+        Bilder på sidan är antingen egenskapade eller hämtade från fria källor. Du får använda dem fritt.<br>
+        Om du använder bilder från externa källor, kontrollera alltid deras licens.
+      </p>
+      <h3>Var kreativ!</h3>
+      <p>
+        Sidan är till för att inspirera. Bygg vidare, förbättra och dela gärna dina egna versioner!
+      </p>
+      <hr>
+      <p style="font-size:0.95em;color:#b85c38;">
+        © 2025 Anwar Abdirahman – Fritt att använda och inspireras av!
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Anwar Abdirahman • Fritt att använda och inspireras av!</p>
+  </footer>
+  <script>
+    // Hamburgarmeny-funktion
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    function closeMenu() { navUl.classList.remove('open'); }
+    hamburger.addEventListener('click', function() {
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    
+
+  </script>
+</body>
+</html>

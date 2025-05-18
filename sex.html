@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruktion 1 – Skapa en HTML-sida</title>
+    <link rel="stylesheet" href="css/ett.css">
+</head>
+<body>
+    <header>
+        <img src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png" alt="HTML-guide logotyp">
+        <h1>HTML för Nybörjare</h1>
+    </header>
+
+    <nav>
+  <ul class="nav-list">
+    <li><a href="index.html">Start</a></li>
+    <li class="dropdown">
+      <a href="#">Instruktioner &#9662;</a>
+      <ul class="dropdown-content">
+        <li><a href="ett.html">HTML och struktur</a></li>
+        <li><a href="two.html">Bilder och Länkar</a></li>
+        <li><a href="three.html">Listor</a></li>
+        <li><a href="four.html">Inputfält</a></li>
+        <li><a href="five.html">Div</a></li>
+        <li><a href="sex.html">Kommentar</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+  </ul>
+  <button id="hamburger" aria-label="Visa meny">
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+  </button>
+</nav>
+
+    <main>
+      <section class="info-block">
+        <h1>Kommentarer i HTML</h1>
+
+    <h2>1. Vad är en kommentar?</h2>
+    <p>En kommentar i HTML används för att skriva anteckningar i koden som <strong>inte syns på hemsidan</strong>. Kommentarer är bra för att förklara vad olika delar av koden gör, både för dig själv och andra.</p>
+
+    <p>Så här skriver du en kommentar i HTML:</p>
+    <pre>
+&lt;!-- Detta är en kommentar --&gt;
+    </pre>
+
+    <h2>2. Exempel på en kommentar</h2>
+    <p>I exemplet nedan finns en kommentar i HTML-koden, men den kommer inte att synas på själva sidan:</p>
+
+    <p>HTML-kod:</p>
+    <pre>
+&lt;!-- Detta är en osynlig kommentar --&gt;
+&lt;p&gt;Detta är en synlig text&lt;/p&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <!-- Detta är en osynlig kommentar -->
+    <p>Detta är en synlig text</p>
+
+    <hr>
+
+    <h2>3. Kommentarer kan användas för att stänga av kod</h2>
+    <p>Du kan också använda kommentarer för att tillfälligt "gömma" en rad kod utan att radera den.</p>
+
+    <p>HTML-kod:</p>
+    <pre>
+&lt;!-- &lt;p&gt;Denna rad är tillfälligt avstängd&lt;/p&gt; --&gt;
+&lt;p&gt;Denna rad visas&lt;/p&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <!-- <p>Denna rad är tillfälligt avstängd</p> -->
+    <p>Denna rad visas</p>
+
+    <hr>
+
+    <h2>4. Sammanfattning</h2>
+    <ul>
+        <li>Kommentarer börjar med <code>&lt;!--</code> och slutar med <code>--&gt;</code></li>
+        <li>De visas <strong>inte</strong> på hemsidan</li>
+        <li>De används för att förklara eller gömma kod</li>
+    </ul>
+      </section>
+
+      <section class="info-block">
+        <h2>Video</h2>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:10px;box-shadow:0 2px 8px rgba(210,180,140,0.12);margin-bottom:16px;">
+        <iframe src="https://www.youtube.com/embed/229HYq40vaA" title="YouTube video" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+      </div>
+      </section>
+
+      <section class="info-block">
+        <h2>Bilder</h2>
+<img src="bilder/Skärmbild 2025-05-18 042652.png" alt="Skärmbild 10" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">      </section>
+    </main>
+
+    <footer>
+      <p>Ansvarig: Anwar  • Senast uppdaterad: maj 2025 • <a href="anwar.a.abdirahman@email.se">anwar.a.abdirahman@gmail.com</a></p>
+    </footer>
+    <script>
+
+
+// 2. Scrolla till toppen-knapp
+const scrollBtn = document.createElement('button');
+scrollBtn.textContent = "↑";
+scrollBtn.id = "scrollTopBtn";
+scrollBtn.style.display = "none";
+scrollBtn.style.position = "fixed";
+scrollBtn.style.bottom = "30px";
+scrollBtn.style.right = "30px";
+scrollBtn.style.padding = "12px 18px";
+scrollBtn.style.borderRadius = "50%";
+scrollBtn.style.background = "#b85c38";
+scrollBtn.style.color = "#fff";
+scrollBtn.style.border = "none";
+scrollBtn.style.fontSize = "1.5em";
+scrollBtn.style.boxShadow = "0 2px 8px rgba(210,180,140,0.15)";
+scrollBtn.style.cursor = "pointer";
+scrollBtn.style.zIndex = "999";
+document.body.appendChild(scrollBtn);
+
+window.addEventListener('scroll', function() {
+  scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+</script>
+<script>
+const hamburger = document.getElementById('hamburger');
+const navUl = document.querySelector('nav ul');
+if(hamburger && navUl) {
+  hamburger.addEventListener('click', function() {
+    navUl.classList.toggle('open');
+  });
+  // Stäng meny när man klickar länk (mobil)
+  navUl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navUl.classList.remove('open'));
+  });
+}
+
+</script>
+</body>
+</html>

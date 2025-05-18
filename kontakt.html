@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt</title>
+  <link rel="stylesheet" href="css/kontakt.css">
+</head>
+<body>
+  <header>
+    <h1>Kontakta mig</h1>
+  </header>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Start</a></li>
+      <li class="dropdown">
+        <a href="#">Instruktioner &#9662;</a>
+        <ul class="dropdown-content">
+          <li><a href="ett.html">HTML och struktur</a></li>
+          <li><a href="two.html">Bilder och Länkar</a></li>
+          <li><a href="three.html">Listor</a></li>
+          <li><a href="four.html">Inputfält</a></li>
+          <li><a href="five.html">Div</a></li>
+          <li><a href="sex.html">Kommentar</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+    </ul>
+    <button id="hamburger" aria-label="Visa meny">
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    </button>
+  </nav>
+  <main class="info-block">
+    <form id="kontaktForm" action="mailto:anwar.a.abdirahman@gmail.com" method="post" enctype="text/plain">
+      <label for="namn">Namn:</label>
+      <input type="text" id="namn" name="namn" required>
+
+      <label for="adress">Adress:</label>
+      <input type="text" id="adress" name="adress">
+
+      <label for="telefon">Telefon:</label>
+      <input type="tel" id="telefon" name="telefon">
+
+      <label for="epost">E-post:</label>
+      <input type="email" id="epost" name="epost" required>
+
+      <label for="kommentar">Kommentar:</label>
+      <textarea id="kommentar" name="kommentar" rows="4" maxlength="200"></textarea>
+      <div id="teckenKvar">200 tecken kvar</div>
+
+      <input type="submit" value="Skicka">
+    </form>
+  </main>
+  <footer>
+    <p>© 2025 Anwar Abdirahman • Fritt att använda och inspireras av!</p>
+  </footer>
+  <script>
+    // Hamburgarmeny-funktion
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('.nav-list');
+    if (hamburger && navUl) {
+      hamburger.addEventListener('click', function() {
+        navUl.classList.toggle('open');
+      });
+      navUl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          navUl.classList.remove('open');
+        });
+      });
+    }
+
+    // Teckenräknare för kommentarsfältet
+    const kommentar = document.getElementById('kommentar');
+    const teckenKvar = document.getElementById('teckenKvar');
+    if (kommentar && teckenKvar) {
+      kommentar.addEventListener('input', function() {
+        let kvar = 200 - kommentar.value.length;
+        teckenKvar.textContent = kvar + ' tecken kvar';
+      });
+    }
+
+    // Formulärvalidering
+    document.getElementById('kontaktForm').addEventListener('submit', function(e) {
+      let namn = document.getElementById('namn').value.trim();
+      let epost = document.getElementById('epost').value.trim();
+      if (namn.length < 2) {
+        alert('Ange ett giltigt namn.');
+        e.preventDefault();
+        return;
+      }
+      if (!epost.includes('@')) {
+        alert('Ange en giltig e-postadress.');
+        e.preventDefault();
+        return;
+      }
+      alert('Tack för ditt meddelande!');
+      e.preventDefault();
+    });
+
+    // Live feedback på e-postfältet
+    document.getElementById('epost').addEventListener('input', function() {
+      if (!this.value.includes('@')) {
+        this.style.borderColor = 'red';
+      } else {
+        this.style.borderColor = '#b85c38';
+      }
+    });
+  </script>
+</body>
+</html>

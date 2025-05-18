@@ -1,0 +1,244 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #fff7e6 0%, #ffe5d9 100%);
+  color: #3a2c1a;
+  min-height: 100vh;
+  transition: background 0.6s;
+}
+
+header {
+  background: #fff3e0;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 16px rgba(210, 180, 140, 0.08);
+  text-align: center;
+  padding: 32px 0 16px 0;
+  animation: fadeInDown 1s;
+}
+
+header img {
+  width: 120px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(210, 180, 140, 0.12);
+  margin-bottom: 12px;
+  animation: popIn 1.2s;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #b85c38;
+}
+
+/* Navigeringsmeny och länkar */
+nav {
+  margin-bottom: 32px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #b85c38;
+  background: #fff7e6;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.nav-list a:hover, .nav-list a:focus {
+  background: #ffe5d9;
+  color: #a8441c;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 200px;
+  background: #fff7e6;
+  box-shadow: 0 8px 24px rgba(210,180,140,0.12);
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+  padding: 0;
+}
+
+.dropdown-content li {
+  display: block;
+  margin: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 0;
+  background: none;
+  color: #b85c38;
+}
+
+.dropdown-content a:hover, .dropdown-content a:focus {
+  background: #ffe5d9;
+  color: #a8441c;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+/* Göm hamburgarikonen på stor skärm */
+#hamburger {
+  display: none;
+}
+
+/* Fade-in och andra animationer */
+main {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  background: #fffdfa;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(210, 180, 140, 0.10);
+  padding: 32px 28px;
+  animation: fadeInUp 1.2s;
+}
+.info-block {
+  background: #fff3e0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(210, 180, 140, 0.08);
+  margin: 24px 0;
+  padding: 18px 20px;
+  animation: fadeIn 1.5s;
+  transition: box-shadow 0.3s;
+}
+.info-block:hover {
+  box-shadow: 0 6px 24px rgba(210, 180, 140, 0.18);
+}
+h2 {
+  color: #b85c38;
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+footer {
+  font-size: 1em;
+  text-align: center;
+  margin: 48px auto 0 auto;
+  color: #a67c52;
+  background: #fff3e0;
+  border-radius: 18px 18px 0 0;
+  max-width: 700px;
+  padding: 18px 0;
+  box-shadow: 0 -2px 12px rgba(210, 180, 140, 0.08);
+  animation: fadeInUp 1.5s;
+}
+
+/* Animationer */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.7);}
+  80% { opacity: 1; transform: scale(1.1);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+/* Responsiv hamburgarmeny */
+@media (max-width: 800px) {
+  nav {
+    position: relative;
+    min-height: 60px;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    background: #fffdfa;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(210,180,140,0.12);
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 16px;
+    margin: 0;
+    align-items: flex-start;
+  }
+  .nav-list.open {
+    display: flex;
+  }
+  #hamburger {
+    display: block;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 200;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border-radius: 0 0 16px 16px;
+    background: #fff7e6;
+  }
+  .nav-list a {
+    width: 100vw;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 14px 24px;
+    font-size: 1.1em;
+  }
+  /* Dropdown visas på klick på mobil, inte på hover */
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content {
+    display: none;
+  }
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  main, footer {
+    max-width: 98vw;
+    padding: 14px 2vw;
+    font-size: 1em;
+  }
+  header {
+    padding: 14px 0 8px 0;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}

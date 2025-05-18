@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruktion 1 – Skapa en HTML-sida</title>
+    <link rel="stylesheet" href="css/ett.css">
+</head>
+<body>
+    <header>
+        <img src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png" alt="HTML-guide logotyp">
+        <h1>HTML för Nybörjare</h1>
+    </header>
+
+    <nav>
+  <ul class="nav-list">
+    <li><a href="index.html">Start</a></li>
+    <li class="dropdown">
+      <a href="#">Instruktioner &#9662;</a>
+      <ul class="dropdown-content">
+        <li><a href="ett.html">HTML och struktur</a></li>
+        <li><a href="two.html">Bilder och Länkar</a></li>
+        <li><a href="three.html">Listor</a></li>
+        <li><a href="four.html">Inputfält</a></li>
+        <li><a href="five.html">Div</a></li>
+        <li><a href="sex.html">Kommentar</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+  </ul>
+  <button id="hamburger" aria-label="Visa meny">
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+  </button>
+</nav>
+
+    <main>
+      <section class="info-block">
+        
+        <h1>Formulär och Inputfält i HTML</h1>
+
+    <!-- Grunderna -->
+    <h2>1. Grunderna i ett formulär</h2>
+    <p>För att skapa ett formulär använder man taggen <code>&lt;form&gt;</code>. Inuti formuläret använder man <code>&lt;input&gt;</code> för att lägga till fält, och <code>&lt;button&gt;</code> eller <code>&lt;input type="submit"&gt;</code> för att skicka formuläret.</p>
+    
+    <p>Exempel på HTML-kod:</p>
+    <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;label for="namn"&gt;Namn:&lt;/label&gt;
+    &lt;input type="text" id="namn" name="namn"&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for="epost"&gt;E-post:&lt;/label&gt;
+    &lt;input type="email" id="epost" name="epost"&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for="lösenord"&gt;Lösenord:&lt;/label&gt;
+    &lt;input type="password" id="lösenord" name="lösenord"&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;input type="submit" value="Skicka"&gt;
+&lt;/form&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <form action="#" method="post">
+        <label for="namn">Namn:</label>
+        <input type="text" id="namn" name="namn"><br><br>
+
+        <label for="epost">E-post:</label>
+        <input type="email" id="epost" name="epost"><br><br>
+
+        <label for="lösenord">Lösenord:</label>
+        <input type="password" id="lösenord" name="lösenord"><br><br>
+
+        <input type="submit" value="Skicka">
+    </form>
+
+    <hr>
+
+    <!-- Fler inputtyper -->
+    <h2>2. Andra typer av inputfält</h2>
+    <p>Du kan använda olika typer av <code>&lt;input&gt;</code> för olika syften, t.ex. nummer, datum, kryssrutor eller radioknappar.</p>
+
+    <p>Exempel på HTML-kod:</p>
+    <pre>
+&lt;input type="number"&gt;
+&lt;input type="date"&gt;
+&lt;input type="checkbox"&gt;
+&lt;input type="radio"&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <p>Nummer: <input type="number"></p>
+    <p>Datum: <input type="date"></p>
+    <p>
+        <label><input type="checkbox"> Jag godkänner villkoren</label>
+    </p>
+    <p>
+        <label><input type="radio" name="val" value="ja"> Ja</label>
+        <label><input type="radio" name="val" value="nej"> Nej</label>
+    </p>
+
+    <hr>
+
+    <!-- Textarea och knapp -->
+    <h2>3. Textarea och knapp</h2>
+    <p><code>&lt;textarea&gt;</code> används för att skriva längre meddelanden. <code>&lt;button&gt;</code> kan användas som alternativ till <code>input type="submit"</code>.</p>
+
+    <p>Exempel på HTML-kod:</p>
+    <pre>
+&lt;textarea rows="4" cols="30"&gt;Skriv något här...&lt;/textarea&gt;
+&lt;button&gt;Skicka&lt;/button&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <textarea rows="4" cols="30">Skriv något här...</textarea><br><br>
+    <button>Skicka</button>
+      </section>
+      <section class="info-block">
+        <h2>Video</h2>
+        <!-- Exempel på video, byt ut src till din video -->
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:10px;box-shadow:0 2px 8px rgba(210,180,140,0.12);margin-bottom:16px;">
+        <iframe src="https://www.youtube.com/embed/zIN54lhJtQU" title="YouTube video" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+      </div>
+      </section>
+
+      <section class="info-block">
+        <h2>Bilder</h2>
+        <img src="bilder/Skärmbild 2025-05-18 041446.png" alt="Skärmbild 7" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+      </section>
+    </main>
+
+    <footer>
+      <p>Ansvarig: Anwar  • Senast uppdaterad: maj 2025 • <a href="anwar.a.abdirahman@email.se">anwar.a.abdirahman@gmail.com</a></p>
+    </footer>
+    <script>
+
+
+// 2. Scrolla till toppen-knapp
+const scrollBtn = document.createElement('button');
+scrollBtn.textContent = "↑";
+scrollBtn.id = "scrollTopBtn";
+scrollBtn.style.display = "none";
+scrollBtn.style.position = "fixed";
+scrollBtn.style.bottom = "30px";
+scrollBtn.style.right = "30px";
+scrollBtn.style.padding = "12px 18px";
+scrollBtn.style.borderRadius = "50%";
+scrollBtn.style.background = "#b85c38";
+scrollBtn.style.color = "#fff";
+scrollBtn.style.border = "none";
+scrollBtn.style.fontSize = "1.5em";
+scrollBtn.style.boxShadow = "0 2px 8px rgba(210,180,140,0.15)";
+scrollBtn.style.cursor = "pointer";
+scrollBtn.style.zIndex = "999";
+document.body.appendChild(scrollBtn);
+
+window.addEventListener('scroll', function() {
+  scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+  // Hamburgarmeny-funktion
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    function closeMenu() { navUl.classList.remove('open'); }
+    hamburger.addEventListener('click', function() {
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  
+ 
+</script>
+
+
+</body>
+</html>

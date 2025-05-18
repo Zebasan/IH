@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruktion 1 – Skapa en HTML-sida</title>
+    <link rel="stylesheet" href="css/ett.css">
+</head>
+<body>
+    <header>
+        <img src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png" alt="HTML-guide logotyp">
+        <h1>HTML för Nybörjare</h1>
+    </header>
+
+    <nav>
+  <ul class="nav-list">
+    <li><a href="index.html">Start</a></li>
+    <li class="dropdown">
+      <a href="#">Instruktioner &#9662;</a>
+      <ul class="dropdown-content">
+        <li><a href="ett.html">HTML och struktur</a></li>
+        <li><a href="two.html">Bilder och Länkar</a></li>
+        <li><a href="three.html">Listor</a></li>
+        <li><a href="four.html">Inputfält</a></li>
+        <li><a href="five.html">Div</a></li>
+        <li><a href="sex.html">Kommentar</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+  </ul>
+  <button id="hamburger" aria-label="Visa meny">
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+  </button>
+</nav>
+
+    <main>
+      <section class="info-block">
+        <h1>Div-taggar i HTML</h1>
+
+    <h2>1. Vad är en &lt;div&gt;?</h2>
+    <p>En <code>&lt;div&gt;</code> är en behållare (container) som används för att gruppera andra HTML-element. Den har ingen visuell effekt i sig själv, men den används för struktur och layout – ofta tillsammans med CSS.</p>
+
+    <p>Exempel på HTML-kod:</p>
+    <pre>
+&lt;div&gt;
+    &lt;h2&gt;Detta är en rubrik&lt;/h2&gt;
+    &lt;p&gt;Detta är ett stycke inuti en div.&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <div class="box">
+        <h2>Detta är en rubrik</h2>
+        <p>Detta är ett stycke inuti en div.</p>
+    </div>
+
+    <hr>
+
+    <h2>2. Flera &lt;div&gt;-block</h2>
+    <p>Du kan använda flera <code>&lt;div&gt;</code>-block för att separera olika delar av din sida, till exempel en header, innehåll och footer.</p>
+
+    <p>Exempel på HTML-kod:</p>
+    <pre>
+&lt;div&gt;Header&lt;/div&gt;
+&lt;div&gt;Innehåll&lt;/div&gt;
+&lt;div&gt;Footer&lt;/div&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <div class="box">Header</div>
+    <div class="box">Innehåll</div>
+    <div class="box">Footer</div>
+
+    <hr>
+
+    <h2>3. Div + CSS = Layout</h2>
+    <p>Div-taggar används ofta för att skapa layout i kombination med CSS. Här är två divar sida vid sida:</p>
+
+    <p>Exempel på HTML-kod + CSS:</p>
+    <pre>
+&lt;div style="width: 45%; float: left; margin-right: 5%;"&gt;Vänster ruta&lt;/div&gt;
+&lt;div style="width: 45%; float: left;"&gt;Höger ruta&lt;/div&gt;
+    </pre>
+
+    <p>Resultat:</p>
+    <div style="width: 45%; float: left; margin-right: 5%; background-color: #d9edf7; padding: 10px;">
+        Vänster ruta
+    </div>
+    <div style="width: 45%; float: left; background-color: #fcf8e3; padding: 10px;">
+        Höger ruta
+    </div>
+    <div style="clear: both;"></div>
+
+      </section>
+
+      <section class="info-block">
+        <h2>Video</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/WbnCll6vvw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </video>
+      </section>
+
+      <section class="info-block">
+        <h2>Bilder</h2>
+        <img src="bilder/Skärmbild 2025-05-18 041847.png" alt="Skärmbild 8" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+<img src="bilder/Skärmbild 2025-05-18 041928.png" alt="Skärmbild 9" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+      </section>
+    </main>
+
+    <footer>
+      <p>Ansvarig: Anwar  • Senast uppdaterad: maj 2025 • <a href="anwar.a.abdirahman@email.se">anwar.a.abdirahman@gmail.com</a></p>
+    </footer>
+    <script>
+
+// 2. Scrolla till toppen-knapp
+const scrollBtn = document.createElement('button');
+scrollBtn.textContent = "↑";
+scrollBtn.id = "scrollTopBtn";
+scrollBtn.style.display = "none";
+scrollBtn.style.position = "fixed";
+scrollBtn.style.bottom = "30px";
+scrollBtn.style.right = "30px";
+scrollBtn.style.padding = "12px 18px";
+scrollBtn.style.borderRadius = "50%";
+scrollBtn.style.background = "#b85c38";
+scrollBtn.style.color = "#fff";
+scrollBtn.style.border = "none";
+scrollBtn.style.fontSize = "1.5em";
+scrollBtn.style.boxShadow = "0 2px 8px rgba(210,180,140,0.15)";
+scrollBtn.style.cursor = "pointer";
+scrollBtn.style.zIndex = "999";
+document.body.appendChild(scrollBtn);
+
+window.addEventListener('scroll', function() {
+  scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+  // Hamburgarmeny-funktion
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    function closeMenu() { navUl.classList.remove('open'); }
+    hamburger.addEventListener('click', function() {
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  
+ 
+</script>
+
+</body>
+</html>

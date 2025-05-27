@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML-guide för nybörjare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <img src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png" alt="HTML-guide logotyp">
+    <h1>HTML för Nybörjare</h1>
+  </header>
+
+  <nav>
+  <ul class="nav-list">
+    <li><a href="index.html">Start</a></li>
+    <li class="dropdown">
+      <a href="#">Instruktioner &#9662;</a>
+      <ul class="dropdown-content">
+        <li><a href="ett.html">HTML och struktur</a></li>
+        <li><a href="two.html">Bilder och Länkar</a></li>
+        <li><a href="three.html">Listor</a></li>
+        <li><a href="four.html">Inputfält</a></li>
+        <li><a href="five.html">Div</a></li>
+        <li><a href="sex.html">Kommentar</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+  </ul>
+  <button id="hamburger" aria-label="Visa meny">
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+  </button>
+</nav>
+
+  <main>
+    <p>Välkommen till min HTML-guide! Här får du lära dig hur HTML fungerar med enkla instruktioner, exempel och övningar. Målgruppen är nybörjare och gymnasieelever som läser Webbutveckling 1 eller 2.</p>
+    <p>Målet är att du ska förstå grunderna i HTML och kunna bygga egna sidor.</p>
+
+    <div class="info-block">
+      <h2>Syfte</h2>
+      <p>Att introducera grunderna i HTML och hjälpa nybörjare att komma igång med webbutveckling.</p>
+    </div>
+    <div class="info-block">
+      <h2>Mål</h2>
+      <p>Efter genomgången guide ska du kunna skapa enkla webbsidor med HTML och förstå grundläggande begrepp.</p>
+    </div>
+    <div class="info-block">
+      <h2>Målgrupp</h2>
+      <p>Den här guiden riktar sig till nybörjare och gymnasieelever som läser Webbutveckling 1 eller 2.</p>
+    </div>
+
+    <h2>Externa resurser</h2>
+    <ul>
+      <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+      <li><a href="https://developer.mozilla.org/sv-SE/" target="_blank">MDN Web Docs</a></li>
+    </ul>
+  </main>
+
+  <footer>
+      <p>Ansvarig: Anwar  • Senast uppdaterad: maj 2025 • <a href="anwar.a.abdirahman@email.se">anwar.a.abdirahman@gmail.com</a></p>
+  </footer>
+  <script>
+  // Hamburgarmeny-funktion
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    function closeMenu() { navUl.classList.remove('open'); }
+    hamburger.addEventListener('click', function() {
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  
+ 
+
+</script>
+</body>
+</html>

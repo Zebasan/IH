@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruktion 1 – Skapa en HTML-sida</title>
+  <link rel="stylesheet" href="css/ett.css">
+</head>
+<body>
+  <header>
+    <img src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png" alt="HTML-guide logotyp">
+    <h1>HTML för Nybörjare</h1>
+  </header>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Start</a></li>
+      <li class="dropdown">
+        <a href="#">Instruktioner &#9662;</a>
+        <ul class="dropdown-content">
+          <li><a href="ett.html">HTML och struktur</a></li>
+          <li><a href="two.html">Bilder och Länkar</a></li>
+          <li><a href="three.html">Listor</a></li>
+          <li><a href="four.html">Inputfält</a></li>
+          <li><a href="five.html">Div</a></li>
+          <li><a href="sex.html">Kommentar</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+    </ul>
+    <button id="hamburger" aria-label="Visa meny">
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+    </button>
+  </nav>
+
+  <main>
+    <section class="info-block">
+      <h2>Vad är HTML</h2>
+      <div>
+        <p>HTML står för Hyper Text Markup Language (hypertextmärkspråk)</p>
+        <p>HTML är det standardiserade märkspråket för att skapa webbsidor</p>
+        <p>HTML beskriver strukturen på en webbsida</p>
+        <p>HTML består av en serie element</p>
+        <p>HTML-element talar om för webbläsaren hur innehållet ska visas</p>
+        <p>HTML-element märker upp delar av innehållet, till exempel "det här är en rubrik", "det här är ett stycke", "det här är en länk" osv.</p>
+      </div>
+      <div>
+        <p>Deklarationen &lt;!DOCTYPE html&gt; anger att detta dokument är ett HTML5-dokument</p>
+        <p>Elementet &lt;html&gt; är rot-elementet i en HTML-sida</p>
+        <p>Elementet &lt;head&gt; innehåller meta-information om HTML-sidan</p>
+        <p>Elementet &lt;title&gt; anger en titel för HTML-sidan (som visas i webbläsarens titelrad eller flik)</p>
+        <p>Elementet &lt;body&gt; definierar dokumentets kropp och är en behållare för allt synligt innehåll, såsom rubriker, stycken, bilder, länkar, tabeller, listor osv.</p>
+        <p>Elementet &lt;h1&gt; definierar en stor rubrik</p>
+        <p>Elementet &lt;p&gt; definierar ett stycke</p>
+      </div>
+    </section>
+
+    <section class="info-block">
+      <h2>Video</h2>
+      <video controls style="width:100%; max-width:800px; border-radius:10px; background:#fffbe7; margin-bottom:16px;">
+        <source src="bilder/Insto1.mp4" type="video/mp4">
+      </video>
+      <iframe style="width:100%; height:400px; border-radius:10px; background:#fffbe7;" src="https://www.youtube.com/embed/it1rTvBcfRg" title="YouTube video" allowfullscreen></iframe>
+    </section>
+
+    <section class="info-block">
+      <h2>Bilder</h2>
+      <img src="bilder/Skärmbild%202025-05-16%20002714.png" alt="Skärmbild 1" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+      <img src="bilder/Skärmbild%202025-05-16%20001350.png" alt="Skärmbild 2" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+      <img src="bilder/Skärmbild%202025-05-16%20002003.png" alt="Skärmbild 3" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12);">
+    </section>
+  </main>
+
+  <footer>
+    <p>Ansvarig: Anwar  • Senast uppdaterad: maj 2025 • <a href="mailto:anwar.a.abdirahman@email.se">anwar.a.abdirahman@gmail.com</a></p>
+  </footer>
+
+  <script>
+    // Scrolla till toppen-knapp
+    const scrollBtn = document.createElement('button');
+    scrollBtn.textContent = "↑";
+    scrollBtn.id = "scrollTopBtn";
+    scrollBtn.style.display = "none";
+    scrollBtn.style.position = "fixed";
+    scrollBtn.style.bottom = "30px";
+    scrollBtn.style.right = "30px";
+    scrollBtn.style.padding = "12px 18px";
+    scrollBtn.style.borderRadius = "50%";
+    scrollBtn.style.background = "#b85c38";
+    scrollBtn.style.color = "#fff";
+    scrollBtn.style.border = "none";
+    scrollBtn.style.fontSize = "1.5em";
+    scrollBtn.style.boxShadow = "0 2px 8px rgba(210,180,140,0.15)";
+    scrollBtn.style.cursor = "pointer";
+    scrollBtn.style.zIndex = "999";
+    document.body.appendChild(scrollBtn);
+
+    window.addEventListener('scroll', function() {
+      scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    });
+
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Hamburgarmeny-funktion
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    function closeMenu() { navUl.classList.remove('open'); }
+    hamburger.addEventListener('click', function() {
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
+</body>
+</html>

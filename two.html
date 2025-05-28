@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Instruktion 1 – Skapa en HTML-sida</title>
-  <link rel="stylesheet" href="css/ett.css" />
+  <link rel="stylesheet" href="css/ett.css">
   <style>
     iframe {
       border-radius: 10px;
@@ -19,8 +19,7 @@
   <header>
     <img
       src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png"
-      alt="HTML-guide logotyp"
-    />
+      alt="HTML-guide logotyp">
     <h1>HTML för Nybörjare</h1>
   </header>
 
@@ -42,36 +41,9 @@
       <li><a href="upphovsratt.html">Upphovsrätt</a></li>
     </ul>
     <button id="hamburger" aria-label="Visa meny">
-      <span
-        style="
-          display: block;
-          width: 28px;
-          height: 4px;
-          background: #b85c38;
-          margin: 6px 0;
-          border-radius: 2px;
-        "
-      ></span>
-      <span
-        style="
-          display: block;
-          width: 28px;
-          height: 4px;
-          background: #b85c38;
-          margin: 6px 0;
-          border-radius: 2px;
-        "
-      ></span>
-      <span
-        style="
-          display: block;
-          width: 28px;
-          height: 4px;
-          background: #b85c38;
-          margin: 6px 0;
-          border-radius: 2px;
-        "
-      ></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
+      <span style="display:block;width:28px;height:4px;background:#b85c38;margin:6px 0;border-radius:2px;"></span>
     </button>
   </nav>
 
@@ -88,7 +60,7 @@
       <p>Resultat:</p>
       <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Besök Google</a>
 
-      <hr />
+      <hr>
 
       <h3>2. Bilder</h3>
       <p>
@@ -103,10 +75,9 @@
       <img
         src="https://kinsta.com/wp-content/uploads/2021/03/HTML-5-Badge-Logo.png"
         alt="Exempelbild"
-        width="300"
-      />
+        width="300">
 
-      <hr />
+      <hr>
 
       <h3>3. Videor</h3>
       <p>
@@ -123,45 +94,41 @@
       </pre>
       <p>Resultat:</p>
       <video controls width="400">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
       </video>
     </section>
 
     <section class="info-block">
       <h2>Video</h2>
-      <video controls style="width:100%; max-width:800px; border-radius:10px; background:#fffbe7; margin-bottom:16px;">
-        <source src="bilder/Insto2.mp4" type="video/mp4" />
-      </video>
-        
+      <iframe
+        src="https://www.youtube.com/embed/AqgZ2aqjDHw"
+        title="YouTube video"
+        allowfullscreen></iframe>
       <iframe
         src="https://www.youtube.com/embed/HA6bByKdAQM"
         title="YouTube video"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen></iframe>
       <iframe
         src="https://www.youtube.com/embed/FmoYRiepmOE"
         title="YouTube video"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen></iframe>
       <iframe
         src="https://www.youtube.com/embed/Ki_0iES2cGI"
         title="YouTube video"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen></iframe>
     </section>
 
     <section class="info-block">
       <h2>Bilder</h2>
       <img
-        src="bilder/Sk%C3%A4rmbild%202025-05-18%20041036.png"
+        src="bilder/Skarmbild_2025-05-18_041036.png"
         alt="Skärmbild 6"
         style="
           max-width: 100%;
           border-radius: 10px;
           box-shadow: 0 2px 8px rgba(210, 180, 140, 0.12);
           margin-bottom: 16px;
-        "
-      />
+        ">
     </section>
   </main>
 
@@ -201,7 +168,7 @@
 
     // Hamburger-meny
     const hamburger = document.getElementById("hamburger");
-    const navUl = document.querySelector("nav ul");
+    const navUl = document.querySelector(".nav-list");
     if (hamburger && navUl) {
       hamburger.addEventListener("click", function () {
         navUl.classList.toggle("open");

@@ -97,22 +97,30 @@
 
     <section class="info-block">
       <h2>Video</h2>
-      <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/WbnCll6vvw4"
-        title="YouTube video player"
-        style="border:0;"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <video controls style="width:100%; max-width:800px; border-radius:10px; background:#fffbe7; margin-bottom:16px;">
-        <source src="bilder/Insto5.mp4" type="video/mp4">
-      </video>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <iframe
+          height="400"
+          src="https://www.youtube.com/embed/UHpqlTEojB8"
+          title="YouTube video player"
+          style="width:100%; border:0; aspect-ratio: 16/9; max-width:100%;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+        <iframe
+          height="400"
+          src="https://www.youtube.com/embed/WbnCll6vvw4"
+          title="YouTube video player"
+          style="width:100%; border:0; aspect-ratio: 16/9; max-width:100%;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
     </section>
 
     <section class="info-block">
       <h2>Bilder</h2>
-      <img src="bilder/Skärmbild%202025-05-18%20041847.png" alt="Skärmbild 8" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
-      <img src="bilder/Skärmbild%202025-05-18%20041928.png" alt="Skärmbild 9" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+      <img src="bilder/Skarmbild_2025-05-18_041847.png" alt="Skärmbild 8" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
+      <img src="bilder/Skarmbild_2025-05-18_041928.png" alt="Skärmbild 9" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(210,180,140,0.12); margin-bottom:16px;">
     </section>
   </main>
 
@@ -149,7 +157,7 @@
 
     // Hamburgarmeny-funktion
     const hamburger = document.getElementById('hamburger');
-    const navUl = document.querySelector('nav ul');
+    const navUl = document.querySelector('.nav-list');
     function closeMenu() { navUl.classList.remove('open'); }
     hamburger.addEventListener('click', function () {
       navUl.classList.toggle('open');
